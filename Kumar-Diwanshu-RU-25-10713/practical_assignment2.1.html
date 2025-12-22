@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* ========== Global reset & base layout ========== */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle, #1d4ed8, #0f172a);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .profile {
+      position: relative;          
+      width: 330px;
+      background: #020617ee;
+      color: #e5e7eb;
+      border-radius: 18px;
+      padding: 22px;
+      border: 1px solid #4b556355;
+      box-shadow: 0 24px 48px #000c;
+
+      transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        border-color 0.3s;
+    }
+
+    .profile:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 34px 72px #000d;
+      border-color: #60a5fa;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .avatar-box {
+      position: relative;      
+      width: 78px;
+      height: 78px;
+      flex-shrink: 0;
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 3px solid #60a5fa;
+      object-fit: cover;
+      display: block;
+    }
+
+    .status {
+      position: absolute;     
+      right: 3px;
+      bottom: 3px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #22c55e;
+      border: 2px solid #020617;
+      box-shadow: 0 0 0 4px #22c55e44;
+    }
+
+
+    #name {
+      font-size: 1.35rem;
+      color: #f9fafb;
+      letter-spacing: 0.03em;
+      margin: 0;
+    }
+
+    .role {
+      font-size: 0.9rem;
+      color: #c7d2fe;
+      margin-top: 3px;
+    }
+
+    .location {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+    .badges {
+      margin-top: 7px;
+    }
+
+    .badge {
+      display: inline-block;     
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      margin: 3px 4px 0 0;
+      border-radius: 999px;
+      background: #0f172a99;
+      border: 1px solid #64748b99;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .badge:hover {
+      background: #1d4ed855;
+      border-color: #60a5fa;
+    }
+
+    .text {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      margin: 16px 0 18px;
+      font-size: 0.8rem;
+    }
+
+    .stat {
+      flex: 1;
+      text-align: center;
+      padding: 4px 0;
+    }
+
+    .stat:not(:last-child) {
+      border-right: 1px solid #4b556366;
+    }
+
+    .label {
+      color: #9ca3af;
+    }
+
+    .value {
+      margin-top: 3px;
+      font-weight: 600;
+    }
+
+   
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 9px 0;
+      border-radius: 999px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      font-size: 0.88rem;
+
+     
+      transition:
+        background 0.2s,
+        transform 0.15s,
+        box-shadow 0.15s;
+    }
+
+    .primary {
+      background: #2563eb;
+      color: #ffffff;
+      box-shadow: 0 12px 24px #2563eb77;
+    }
+
+    .secondary {
+      background: transparent;
+      color: #e5e7eb;
+      border-color: #4b5563;
+    }
+
+    .primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px #2563ebaa;
+    }
+
+    .secondary:hover {
+      background: #0f172acc;
+      border-color: #60a5fa;
+      transform: translateY(-2px);
+      box-shadow: 0 18px 32px #000d;
+    }
+
+    .btn:active {
+      transform: translateY(1px) scale(0.97);
+    }
+
+    .btn:focus {
+      box-shadow:
+        0 0 0 2px #020617,
+        0 0 0 4px #60a5fa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <article class="profile">
+
+    <div class="header">
+
+      <div class="avatar-box">
+        <img
+          class="avatar"
+          src="https://via.placeholder.com/200"
+          alt="Profile avatar"
+        >
+        <span class="status"></span>
+      </div>
+
+      <div>
+        <h1 id="name">Alex Johnson</h1>
+        <p class="role">Frontend Developer</p>
+        <p class="location">📍 Berlin, Germany</p>
+
+        <div class="badges">
+          <span class="badge">React</span>
+          <span class="badge">UI/UX</span>
+          <span class="badge">JavaScript</span>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text">
+      Building smooth user interfaces with animation,
+      accessibility, and clean code for modern web apps.
+    </p>
+
+    <div class="stats">
+
+      <div class="stat">
+        <div class="label">Projects</div>
+        <div class="value">24</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Followers</div>
+        <div class="value">3.2k</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Rating</div>
+        <div class="value">4.9★</div>
+      </div>
+
+    </div>
+
+    <div class="actions">
+      <button class="btn primary">Follow</button>
+      <button class="btn secondary">Message</button>
+    </div>
+
+  </article>
+
+</body>
+
+</html>

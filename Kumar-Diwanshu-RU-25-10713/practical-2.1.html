@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inline, Internal, and External CSS Example</title>
+  
+  <!-- Internal CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 20px;
+    }
+    h1 {
+      color: darkblue;
+      text-align: center;
+    }
+    p {
+      color: #333;
+      font-size: 18px;
+    }
+    .internal-box {
+      background-color: lightyellow;
+      border: 2px solid orange;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+  </style>
+  
+  <!-- External CSS link -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Using Inline, Internal, and External CSS</h1>
+
+  <!-- Inline CSS Example -->
+  <p style="color: green; font-weight: bold;">This paragraph uses <b>inline CSS</b> for its color and text style.</p>
+
+  <!-- Internal CSS Example -->
+  <div class="internal-box">
+    <p>This box is styled using <b>internal CSS</b> defined inside the &lt;style&gt; tag in the &lt;head&gt; section.</p>
+  </div>
+
+  <!-- External CSS Example -->
+  <div class="external-box">
+    <p>This section will use <b>external CSS</b> applied through a linked stylesheet named <code>style.css</code>.</p>
+  </div>
+
+  <footer style="text-align:center; margin-top:20px; font-style:italic;">
+    Example created by Kumar Diwanshu.
+  </footer>
+
+</body>
+</html>

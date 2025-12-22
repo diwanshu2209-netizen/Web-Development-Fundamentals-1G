@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Web Page with Media Queries</title>
+  <style>
+    /* Mobile-first design: base styles for small screens */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #0d6efd;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #e3f2fd;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: #0d6efd;
+      text-decoration: none;
+      margin: 0.5rem;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .box {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #0d6efd;
+      color: white;
+      padding: 1rem;
+    }
+
+    /* Media Query for tablets */
+    @media (min-width: 600px) {
+      nav {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .box {
+        flex: 1 1 calc(50% - 2rem);
+      }
+    }
+
+    /* Media Query for desktops */
+    @media (min-width: 900px) {
+      header {
+        padding: 2rem;
+      }
+
+      .container {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .box {
+        flex: 1 1 calc(33.33% - 1rem);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Responsive Web Design Example</h1>
+    <p>Using Media Queries and Mobile-First Approach</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="container">
+    <div class="box">
+      <h2>Box 1</h2>
+      <p>This is an example of a flexible box that adjusts based on screen size.</p>
+    </div>
+
+    <div class="box">
+      <h2>Box 2</h2>
+      <p>The layout is mobile-first, meaning it is optimized for small screens first and expands for larger ones.</p>
+    </div>
+
+    <div class="box">
+      <h2>Box 3</h2>
+      <p>Resize the browser window to see how the boxes rearrange responsively using media queries.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Responsive Design Example | Created by Kumar Diwanshu</p>
+  </footer>
+</body>
+</html>

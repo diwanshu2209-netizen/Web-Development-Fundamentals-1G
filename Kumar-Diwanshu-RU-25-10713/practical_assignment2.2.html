@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive Layout: Header, Sidebar, Content</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      background: #f3f4f6;
+    }
+
+    header,
+    footer {
+      background: #111827;
+      color: #f9fafb;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .layout-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem;
+    }
+
+    .layout {
+      background: #e5e7eb;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+    }
+
+    .sidebar {
+      background: #dbeafe;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .content {
+      background: #fef3c7;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+ 
+    .layout::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .sidebar,
+    .content {
+      width: 100%;
+      float: none;
+    }
+
+
+    @media (min-width: 600px) and (max-width: 899px) {
+      .sidebar {
+        float: left;
+        width: 30%;
+        margin-bottom: 0;
+      }
+
+      .content {
+        float: left;
+        width: 70%;
+        margin-bottom: 0;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .sidebar {
+        float: left;
+        width: 20%;
+        margin-bottom: 0;
+      }
+
+      .content {
+        float: left;
+        width: 80%;
+        margin-bottom: 0;
+      }
+    }
+
+
+    @supports (display: flex) {
+      @media (min-width: 600px) {
+        .layout {
+          display: flex;
+          gap: 0.75rem;
+        }
+
+        .sidebar,
+        .content {
+          float: none;        
+          width: auto;
+          margin-bottom: 0;
+        }
+      }
+      @media (min-width: 600px) and (max-width: 899px) {
+        .sidebar {
+          flex: 0 0 30%;
+        }
+        .content {
+          flex: 1;
+        }
+      }
+
+      @media (min-width: 900px) {
+        .sidebar {
+          flex: 0 0 20%;
+        }
+        .content {
+          flex: 1;
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Responsive Layout Demo</h1>
+  </header>
+
+  <div class="layout-wrapper">
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>Sidebar</h2>
+        <p>Navigation links or secondary content can go here.</p>
+        <ul>
+          <li>Menu Item 1</li>
+          <li>Menu Item 2</li>
+          <li>Menu Item 3</li>
+        </ul>
+      </aside>
+
+      <main class="content">
+        <h2>Main Content</h2>
+        <p>
+          Resize the browser to see the layout change:
+        </p>
+        <ul>
+          <li><strong>&lt; 600px:</strong> Header, Sidebar, Content all stacked.</li>
+          <li><strong>600–899px:</strong> Sidebar and Content side by side (30% / 70%).</li>
+          <li><strong>&ge; 900px:</strong> Sidebar narrows (20% / 80%).</li>
+        </ul>
+        <p>
+          Floats + clearfix provide the basic two-column layout, and flexbox
+          (via <code>@supports</code>) enhances it in modern browsers.
+        </p>
+      </main>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Responsive Layout Example</p>
+  </footer>
+</body>
+</html>

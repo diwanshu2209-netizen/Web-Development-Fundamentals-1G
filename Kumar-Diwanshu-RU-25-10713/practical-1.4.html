@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Simple HTML Form </title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width:800px; margin:2rem auto; padding:1rem; }
+    form { background:#f9f9f9; padding:1rem 1.25rem; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
+    fieldset { border:1px solid #ddd; padding:1rem; margin-bottom:1rem; }
+    legend { font-weight:bold; }
+    label { display:block; margin:0.5rem 0 0.25rem; }
+    input[type="text"], input[type="email"], select, textarea { width:100%; padding:0.5rem; border:1px solid #ccc; border-radius:4px; }
+    .row { display:flex; gap:1rem; }
+    .col { flex:1; }
+    .small { font-size:0.9rem; color:#555; }
+    .controls { display:flex; gap:0.5rem; }
+    button { padding:0.5rem 0.9rem; border-radius:6px; border:1px solid #888; background:#fff; cursor:pointer; }
+    button.primary { background:#2d89ef; color:#fff; border-color:#2d89ef; }
+  </style>
+</head>
+<body>
+
+  <h1>Registration Form</h1>
+  <p class="small">This simple form shows common form controls: text input, radio buttons, checkboxes, selects, and submit/reset buttons.</p>
+
+  <form action="#" method="post">
+
+    <fieldset>
+      <legend>Personal details</legend>
+
+      <label for="name">Full name</label>
+      <input type="text" id="name" name="name" placeholder="e.g. Kumar Diwanshu" required>
+
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+      <div class="row">
+        <div class="col">
+          <label for="age">Age</label>
+          <input type="text" id="age" name="age" placeholder="e.g. 18">
+        </div>
+        <div class="col">
+          <label>Gender</label>
+          <label><input type="radio" name="gender" value="male"> Male</label>
+          <label><input type="radio" name="gender" value="female"> Female</label>
+          <label><input type="radio" name="gender" value="other"> Other</label>
+        </div>
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Interests</legend>
+
+      <label>Choose your hobbies (you can pick more than one)</label>
+      <label><input type="checkbox" name="hobby" value="coding"> Coding</label>
+      <label><input type="checkbox" name="hobby" value="music"> Music</label>
+      <label><input type="checkbox" name="hobby" value="sports"> Sports</label>
+      <label><input type="checkbox" name="hobby" value="reading"> Reading</label>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Preferences</legend>
+
+      <label for="course">Which course do you want to join?</label>
+      <select id="course" name="course">
+        <option value="">-- Choose an option --</option>
+        <option value="html">HTML Basics</option>
+        <option value="css">CSS for Beginners</option>
+        <option value="js">JavaScript Intro</option>
+      </select>
+
+      <label for="message">Short message (optional)</label>
+      <textarea id="message" name="message" rows="4" placeholder="Tell us something about yourself"></textarea>
+
+    </fieldset>
+
+    <div class="controls">
+      <button type="submit" class="primary">Submit</button>
+      <button type="reset">Reset</button>
+    </div>
+
+  </form>
+
+
+</body>
+</html>
