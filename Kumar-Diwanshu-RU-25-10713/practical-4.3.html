@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background: lightgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+    .active {
+      background: green;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div id="box" class="box">Hover / Click / Press</div>
+<button id="remove">Remove Events</button>
+
+<script>
+const box = document.getElementById("box");
+
+// Mouse Events
+function mouseOver() {
+  box.textContent = "Mouse Over!";
+  box.classList.add("active");
+}
+
+function mouseOut() {
+  box.textContent = "Mouse Out!";
+  box.classList.remove("active");
+}
+
+function clickBox() {
+  box.textContent = "Clicked!";
+}
+
+// Keyboard Event
+function keyPress(e) {
+  box.textContent = "Key: " + e.key;
+}
+
+// Add Event Listeners
+box.addEventListener("mouseover", mouseOver);
+box.addEventListener("mouseout", mouseOut);
+box.addEventListener("click", clickBox);
+document.addEventListener("keydown", keyPress);
+
+// Remove all listeners
+document.getElementById("remove").addEventListener("click", () => {
+  box.removeEventListener("mouseover", mouseOver);
+  box.removeEventListener("mouseout", mouseOut);
+  box.removeEventListener("click", clickBox);
+  document.removeEventListener("keydown", keyPress);
+  box.textContent = "Events Removed";
+});
+</script>
+
+</body>
+</html>

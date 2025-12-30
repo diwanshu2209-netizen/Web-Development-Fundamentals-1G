@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .hidden {
+      display: none;
+    }
+    .highlight {
+      color: white;
+      background: black;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <p id="text">I can be shown or hidden</p>
+  <button onclick="show()">Show</button>
+  <button onclick="hide()">Hide</button>
+  <button onclick="toggle()">Toggle</button>
+
+  <br><br>
+
+  <p id="title">Toggle CSS Class Example</p>
+  <button onclick="toggleClass()">Toggle Class</button>
+
+  <script>
+    function show() {
+      document.getElementById("text").style.display = "block";
+    }
+
+    function hide() {
+      document.getElementById("text").style.display = "none";
+    }
+
+    function toggle() {
+      const el = document.getElementById("text");
+      el.style.display = (el.style.display === "none") ? "block" : "none";
+    }
+
+    function toggleClass() {
+      document.getElementById("title").classList.toggle("highlight");
+    }
+  </script>
+
+</body>
+</html>

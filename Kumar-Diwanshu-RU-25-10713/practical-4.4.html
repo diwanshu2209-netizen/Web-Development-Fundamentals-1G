@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #list li {
+      padding: 6px;
+      margin: 3px 0;
+      background: lightgray;
+    }
+  </style>
+</head>
+
+<body>
+
+<ul id="list">
+  <li>Item 1</li>
+</ul>
+
+<button id="add">Append Element</button>
+<button id="modify">Modify First Element</button>
+<button id="remove">Remove Last Element</button>
+
+<script>
+const list = document.getElementById("list");
+
+
+document.getElementById("add").addEventListener("click", () => {
+  const li = document.createElement("li");
+  li.textContent = "New Item";
+  list.appendChild(li);
+});
+
+
+document.getElementById("modify").addEventListener("click", () => {
+  if (list.firstElementChild) {
+    list.firstElementChild.textContent = "Modified Item";
+  }
+});
+
+
+document.getElementById("remove").addEventListener("click", () => {
+  if (list.lastElementChild) {
+    list.removeChild(list.lastElementChild);
+  }
+});
+</script>
+
+</body>
+</html>

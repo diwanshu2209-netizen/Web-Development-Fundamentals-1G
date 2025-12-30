@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Drawing</title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="400" height="300" style="border:1px solid black;"></canvas>
+
+<script>
+const c = document.getElementById("myCanvas");
+const ctx = c.getContext("2d");
+
+ctx.fillStyle = "skyblue";
+ctx.fillRect(20, 20, 120, 80);
+
+ctx.strokeStyle = "red";
+ctx.strokeRect(160, 20, 120, 80);
+
+ctx.beginPath();
+ctx.arc(100, 200, 40, 0, Math.PI * 2);
+ctx.fillStyle = "green";
+ctx.fill();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.moveTo(200, 180);
+ctx.lineTo(300, 250);
+ctx.strokeStyle = "purple";
+ctx.lineWidth = 3;
+ctx.stroke();
+ctx.closePath();
+
+ctx.fillStyle = "black";
+ctx.font = "16px Arial";
+ctx.fillText("Simple Canvas Drawing", 110, 290);
+</script>
+
+</body>
+</html>
